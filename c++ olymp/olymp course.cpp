@@ -2,14 +2,13 @@
 #include <bits/stdc++.h>
 #include <cmath>
 #include <string.h>
-using namespace std;
 #include <algorithm>
 #include <string>
 #include <conio.h>
 #include <stdio.h>
-
+using namespace std;
 int main(){
- 				//week 1 	
+ 				//week 1 
 /*
  //number 1          +
 
@@ -1661,6 +1660,7 @@ cout<<endl;
 
 cout<<endl<<sum;
  */
+
 /*
  //------------number 96(meore amoxsna)  +	
 int n,i,j,a,b,c,arr[101][101],x,sum=0;
@@ -1682,7 +1682,7 @@ for(i=0;i<=100;i++){
 		}		
 	}
  cout<<endl<<sum;	
- */
+*/
 	 		 		 						
 /*
 //------------number 97  +
@@ -1869,11 +1869,344 @@ for(i=500;i>0;i--){
 }
 cout<<endl<<sum;
 */
+							//week 22(codeforce)
+
+/*
+//------------number 102  +
+int n, a,b,c,i,j;
+
+cin>>n;
+for(i=0;i<n;i++){
+	cin>>a>>b>>c;
+	
+	if(a+b==c){
+		cout<<'+'<<endl;
+	}
+	else if(a-b==c){
+		cout<<'-'<<endl;
+	}
+	
+}
+*/
+/*
+//------------number 103  +
+
+int n[1000],a[1000],sumM=0,sumB=0;
+double t;
+cin>>t;
+	for(int i=0;i<t;i++){
+		cin>>n[i];
+		sumM=0;
+		sumB=0;
+			for(int j=0;j<n[i];j++){
+				cin>>a[j];
+				if(a[j]%2!=0){
+					sumB+=a[j];
+				}		
+				else if(a[j]%2==0){
+					sumM+=a[j];
+				}	
+			}
+		if(sumM>=sumB){
+			cout<<"\nYES"<<endl;
+		}		
+		else{
+			cout<<"\nNO"<<endl;
+		}
+	}
+*/
+
+
+/*
+
+//------------number 104  +
+
+int n,sum=0,t;
+char a[100];
+
+cin>>t;
+
+for(int i=0;i<t;i++){
+	cin>>n;
+	    bool f=1;
+	for(int j=0;j<n;j+=2){
+		cin>>a[j];
+		for(int k=1;k<n;k+=2){
+		    if(a[j]==a[k]){
+				//sum++;
+				f=0;
+			}
+		}
+		
+	//	if(sum==1){
+	//		break;
+	//	}
+	//	else if(sum==0){
+	//		break;
+	//	}			
+	}
+	 	if(f==1){
+			cout<<"YES";
+		}
+        else{
+			cout<<"NO";
+		}
+		
+//	if(sum==0){	
+//		cout<<endl<<"YES"<<endl;
+//	}
+//	else{
+//		cout<<endl<<"NO"<<endl;	
+	//}
+				
+}
+*/
+/*
+    int t; cin>>t;
+    while(t--){
+        int n; 
+		string s; 
+		cin>>n>>s;
+        bool f=1;
+        for(int i=0; i<n; i+=2){
+            for(int j=1; j<n; j+=2){
+            	if(s[j]==s[i]){
+					f=0;
+				}
+            }
+        }
+        if(f==1){
+			cout<<"YES";
+		}
+        else{
+			cout<<"NO";
+		}
+}
+
+*/
+
+
+	//week 23(codeforce)
+
+/*
+//------------number 105  +
+int i,j,k=0,q,d=0,n,t,a[1007],b[1007];
+cin>>q;
+for(i=0;i<q;i++){
+	cin>>n>>t;
+		for(j=0;j<n;j++){
+			cin>>a[j];
+		}
+		
+		for(j=0;j<n;j++){
+			cin>>b[j];
+		}	
+
+		for(j=0;j<n;j++){
+
+			if(j+a[j]<=t&& b[j]>k){
+				d=j+1;
+				k=b[j];
+			}
+		}
+
+		if(d!=0){
+			cout<<d<<endl;
+		}
+		else{
+			cout<<"-1"<<endl;
+		}
+d=0;
+k=0;	
+}
+*/
+
+/*
+//------------number 106  
+
+long long int a[10007],i,t,n,temp,mult,mx;
+cin>>t;
+	for(int k=0;k<t;k++){
+	cin>>n;
+	for(i=0;i<n;i++){
+		cin>>a[i];
+	}
+
+mx=0;
+	for(i=0;i<n;i++){
+		for(int j=0;j<n;j++){
+			mult=0;
+			if(a[i]>a[j]&&a[i]!=a[j]){
+				mult+=a[i]*a[j];
+			}
+			if(a[i]==a[j]&&i!=j){
+					mult+=a[i]*a[j];
+			}
+			if(mult>=mx){
+				mx=mult;
+			}
+			
+		}		
+	}
+cout<<endl<<mx<<"  "<<endl;	
+mult=0;
+}
+*/
+/*
+//------------number 106 (meore xerxi)
+
+long long int a[100000],mult,mult1,i,t,n,temp;
+cin>>t;
+for(int k=0;k<t;k++){
+	cin>>n;
+	for(i=0;i<n;i++){
+		cin>>a[i];
+	}
+	
+	for(i=0;i<n;i++){
+		for(int j=0;j<n-1;j++){
+			if(a[j]>a[j+1]){
+				temp=a[j];
+				a[j]=a[j+1];
+				a[j+1]=temp;
+			}
+		}	
+
+		mult=a[0]*a[1];
+		mult1=a[n-1]*a[n-2];	
+	}
+	
+	if(mult>=mult1){
+		cout<<endl<<mult<<endl;
+	}	
+	else{
+		cout<<endl<<mult1<<endl;
+	}
+mult=0;
+mult1=0;
+temp=0;
+}
+*/
+/*
+//------------number 106 (mesami xerxi)
+long long int a[100000],mult,mult1,i,t,n;
+cin>>t;
+for(int j=0;j<t;j++){
+
+	cin>>n;
+	for(i=0;i<n;i++){
+		cin>>a[i];
+	}	
+
+sort(a,a+n);	
+
+mult=a[0]*a[1];
+mult1=a[n-1]*a[n-2];
+
+if(mult>mult1){
+	cout<<mult<<endl;
+}else{
+	cout<<mult1<<endl;
+}
+
+n=0;
+mult=0;
+mult1=0;
 
 
 
 }
+*/
+/*===========================================================*/
+/*========================ALGORITHMS=========================*/
+/*===========================================================*/
 
+
+
+
+/*=========BUBBLE SORT========*/
+int n,i,j,a[100];
+
+cin>>n;
+srand(time(0));
+for(i=0;i<n;i++){
+			a[i]=10+rand()%31;	
+}
+
+for(i=0;i<n;i++){
+	cout<<setw(4)<<a[i];
+}
+
+cout<<endl;
+
+/*
+for(i=0;i<n-1;i++){
+	for(j=0;j<n-i;j++){
+		if(a[j]<a[j+1]){
+			swap(a[j],a[j+1]);
+		}
+	}	
+}
+*/
+
+	for(i=0;i<n-1;i++){
+		for(int j=0;j<n-1;j++){
+			if(a[j]<a[j+1]){
+				swap(a[j],a[j+1]);
+			}
+			
+		}	
+	}
+
+
+cout<<endl;
+for(i=0;i<n;i++){
+	cout<<setw(4)<<a[i];
+}
+
+/*=========SELECTION SORT========*/
+
+
+int n,i,j,a[100];
+
+cin>>n;
+srand(time(0));
+for(i=0;i<n;i++){
+			a[i]=10+rand()%31;	
+}
+
+for(i=0;i<n;i++){
+	cout<<setw(4)<<a[i];
+}
+
+cout<<endl;
+
+/*
+for(i=0;i<n-1;i++){
+	for(j=0;j<n-i;j++){
+		if(a[j]<a[j+1]){
+			swap(a[j],a[j+1]);
+		}
+	}	
+}
+*/
+
+	for(i=0;i<n-1;i++){
+		for(int j=0;j<n-1;j++){
+			if(a[j]<a[j+1]){
+				swap(a[j],a[j+1]);
+			}
+			
+		}	
+	}
+
+
+cout<<endl;
+for(i=0;i<n;i++){
+	cout<<setw(4)<<a[i];
+}
+
+}
 
 
 
