@@ -2113,10 +2113,81 @@ n=0;
 mult=0;
 mult1=0;
 
-
-
 }
 */
+
+/*========================================
+===============meore kursi================
+========================================*/
+
+//Codeforces Round 898 (Div. 4) A. Short Sort
+/*
+int t,x=0;
+string txt;
+
+cin>>t;
+for(int i=0;i<t;i++){
+	cin>>txt;	
+	if(	txt.find("b")==0 &&txt.find("c")==1||
+	txt.find("b")==2 &&txt.find("c")==0
+	) cout<<"NO"<<endl;
+	else cout<<"YES"<<endl;
+}
+*/
+//Codeforces Round 898 (Div. 4) B. Good Kid
+/*
+int t,n,a[10],min;
+bool check=false;
+unsigned long long int sum;
+cin>>t;
+
+for(int i=0;i<t;i++){
+	cin>>n;
+	sum=1;
+	check=false;
+	min= INT_MAX;
+	for(int j=0;j<n;j++){
+		cin>>a[j];
+	if(min>a[j]) min=a[j];
+	}
+	
+for(int j=0;j<n;j++){
+	if(min!=a[j]){
+		sum*=a[j];
+	}else if(min==a[j] && check==false){
+		sum*=a[j]+1;
+		check=true;
+	}else if(min==a[j] &&check>false){
+		sum*=a[j];
+	}
+}
+	
+cout<<sum<<endl;
+}
+
+//(meore xerxi)
+
+*/
+/*
+int t,n,a[10],min=0;
+unsigned long long int sum=1;
+	cin>>t;
+for(int i=0;i<t;i++){
+	cin>>n;
+	min=0;
+	sum=1;
+	for(int j=0;j<n;j++){
+		cin>>a[j];
+	}
+sort(a,a+n);
+	for(int j=0;j<n;j++){
+		min=a[0];
+	if(j!=0) sum*=a[j];
+	}
+cout<<sum*(min+1)<<endl;
+}
+*/
+
 /*===========================================================*/
 /*========================ALGORITHMS=========================*/
 /*===========================================================*/
@@ -2125,6 +2196,7 @@ mult1=0;
 
 
 /*=========BUBBLE SORT========*/
+/*
 int n,i,j,a[100];
 
 cin>>n;
@@ -2138,8 +2210,10 @@ for(i=0;i<n;i++){
 }
 
 cout<<endl;
+*/
 
-/*
+
+/*==
 for(i=0;i<n-1;i++){
 	for(j=0;j<n-i;j++){
 		if(a[j]<a[j+1]){
@@ -2147,8 +2221,8 @@ for(i=0;i<n-1;i++){
 		}
 	}	
 }
-*/
-
+==*/
+/*
 	for(i=0;i<n-1;i++){
 		for(int j=0;j<n-1;j++){
 			if(a[j]<a[j+1]){
@@ -2163,10 +2237,10 @@ cout<<endl;
 for(i=0;i<n;i++){
 	cout<<setw(4)<<a[i];
 }
-
+*/
 /*=========SELECTION SORT========*/
 
-
+/*
 int n,i,j,a[100];
 
 cin>>n;
@@ -2180,8 +2254,8 @@ for(i=0;i<n;i++){
 }
 
 cout<<endl;
-
-/*
+*/
+/*==
 for(i=0;i<n-1;i++){
 	for(j=0;j<n-i;j++){
 		if(a[j]<a[j+1]){
@@ -2189,8 +2263,8 @@ for(i=0;i<n-1;i++){
 		}
 	}	
 }
-*/
-
+==*/
+/*
 	for(i=0;i<n-1;i++){
 		for(int j=0;j<n-1;j++){
 			if(a[j]<a[j+1]){
@@ -2205,6 +2279,8 @@ cout<<endl;
 for(i=0;i<n;i++){
 	cout<<setw(4)<<a[i];
 }
+*/
+
 
 }
 
