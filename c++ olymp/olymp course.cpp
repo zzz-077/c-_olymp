@@ -1,13 +1,20 @@
 #include <iostream>
 #include <bits/stdc++.h>
 #include <cmath>
+#include <math.h>
 #include <string.h>
 #include <algorithm>
 #include <string>
 #include <conio.h>
 #include <stdio.h>
+#include <cctype>
+#include <set>
+#include <vector>
+#include <map>
+#include <deque>
 using namespace std;
 int main(){
+
  				//week 1 
 /*
  //number 1          +
@@ -2089,10 +2096,9 @@ temp=0;
 */
 /*
 //------------number 106 (mesami xerxi)
-long long int a[100000],mult,mult1,i,t,n;
+long long int a[200007],mult,mult1,i,t,n;
 cin>>t;
 for(int j=0;j<t;j++){
-
 	cin>>n;
 	for(i=0;i<n;i++){
 		cin>>a[i];
@@ -2105,22 +2111,575 @@ mult1=a[n-1]*a[n-2];
 
 if(mult>mult1){
 	cout<<mult<<endl;
-}else{
+}
+else{
 	cout<<mult1<<endl;
 }
 
-n=0;
-mult=0;
-mult1=0;
+}
+*/
+
+/*
+//------------number 107 (pirveli xerxi)
+
+long long int t,n,sm=9,Rsum=26;
+cin>>t;
+
+while(t!=0){
+cin>>n;
+
+		for(int j=0;j<n-4;j++){	
+			sm+=2;	
+			Rsum+=sm;
+		}	
+cout<<endl<<Rsum;
+
+Rsum=26;
+sm=9;
+t--;
+}
+*/
+
+/*
+//------------number 107 (meore swrafi xerxi)
+long long int t,n,sm=9,Rsum=26;
+cin>>t;
+for(int i=0;i<t;i++){
+cin>>n;	
+ 
+  Rsum=((n+1)*(n+1))+1;
+cout<<endl<<Rsum;
+ 
+Rsum=26;
+sm=9;
+*/
+
+//------------number 108(Round 871(div-4) problem A(Love Story))
+
+/*
+char s[10]={'c','o','d','e','f','o','r','c','e','s'};
+char alf[10];
+int sum=0,n;
+cin>>n;
+for(int j=0;j<n;j++){
+	for(int i=0;i<10;i++){
+	cin>>alf[i];
+		if(s[i]!=alf[i]){
+			sum++;
+		}
+	
+	}
+cout<<sum<<endl;
+sum=0;
+}
+*/
+
+//------------number 109(Round 871(div-4) problem B(Blank Space))
+/*
+int n,t,sum=0,a[101],mx=0;
+
+cin>>t;
+for(int i=0;i<t;i++){
+	cin>>n;
+	for(int j=0;j<n;j++){
+		cin>>a[j];
+		if(a[j]==0){
+			sum++;
+		}
+		else{
+			sum=0;
+		}
+		if(mx<=sum){
+			mx=sum;
+		}	
+	}	
+	cout<<endl<<mx<<endl;
+	mx=0;
+	sum=0;
+}
+*/
+
+/*
+//------------number 110(Round 871(div-4) problem C(Mr.Perfectly Fine))
+
+int t,n,i,j,a[20000],arr1=0,arr2=0,arr3=0;
+int mx1,mx2,mx3;
+string bin[20000];
+cin>>t;
+for( j=0;j<t;j++){
+	cin>>n;
+ mx1=1e9;
+ mx2=1e9;
+ mx3=1e9;
+	for(i=0;i<n;i++){
+		cin>>a[i]>>bin[i];
+		if(bin[i]=="01"){
+			arr1++;
+			mx1=min(a[i],mx1);
+		}
+		else if(bin[i]=="10"){
+			arr2++;	
+			mx2=min(a[i],mx2);
+		}
+		else if(bin[i]=="11"){
+			arr3++;
+			mx3=min(a[i],mx3);	
+		}
+	}
+
+if(mx1+mx2>=mx3 && arr3==0){
+		cout<<endl<<"-1"<<endl;
+	}
+else{
+	if(mx1+mx2<=mx3){
+		cout<<endl<<mx1+mx2<<endl;
+	}
+	else if(mx1+mx2>=mx3){
+		cout<<endl<<mx3<<endl;
+	}
+	else {
+		cout<<endl<<"-1"<<endl;
+	}
+}
+arr1=0;
+arr2=0;
+arr3=0;
+	}
+*/
+/*
+//------------number 111( problemset 4A(Watermelon))
+
+int w,sum=0;
+cin>>w;
+for(int i=1;i<=w/2;i++){
+
+	for(int j=1;j<w;j++){
+		
+		if(i+j==w&&j%2==0&&i%2==0){
+		sum++;
+		}
+	}
 
 }
+if(sum>0)cout<<"YES";
+else cout<<"NO";
+*/
+/*
+//------------number 112( problemset 71A(Way Too Long Words))
+int n;
+string a;
+cin>>n;
+for(int i=0;i<n;i++){
+		cin>>a;	
+	if(a.length()>=10){
+		cout<<a[0]<<a.length()-2<<a[a.size()-1]<<endl;
+	}
+	else{
+		cout<<a<<endl;
+	}
+}
+*/
+/*
+//------------number 113(Round 827(div-4) problem A(Sum))
+
+int n, a,b,c, i,j;
+cin>>n;
+for(i=0;i<n;i++){
+	cin>>a>>b>>c;
+	if(a+b==c)cout<<"YES"<<endl;
+	else if(a+c==b)cout<<"YES"<<endl;
+	else if(b+c==a)cout<<"YES"<<endl;
+	else cout<<"NO"<<endl;
+	
+}
+*/
+/*
+//------------number 114(Round 143(div-2) problem A(Team))
+
+int n,a,b,c,sum=0,maxsum=0;;
+cin>>n;
+
+for(int i=0;i<n;i++){
+	cin>>a>>b>>c;
+if(a==1&&b==1&&c==1) sum++;
+else if(a==1&&b==1) sum++;
+else if(a==1&&c==1) sum++;
+else if(b==1&&c==1) sum++;
+
+maxsum+=sum;
+sum=0;
+} 
+cout<<endl<<maxsum;
+*/
+//------------number 115 problem A(Theatre Square))
+/*
+unsigned long long a1=0,a2=0;
+int n,m,a;
+cin>>n>>m>>a;
+a1=n/a;
+if(n%a!=0)a1++;
+a2=m/a;
+if(m%a!=0)a2++;
+cout<<a1*a2;
+*/
+/*
+//------------number 116 problem A(Next Round))
+int num,i,n,k,a[100],sum=0;
+cin>>n>>k;
+for(i=1;i<=n;i++){
+cin>>a[i];	
+num=a[k];
+}
+
+for(i=1;i<=n;i++){
+	if(a[i]>=num& a[i]!=0){
+		sum++;
+	}
+}
+cout<<endl<<sum;
+*/
+/*
+//------------number 116(Round 47 problem A(Domino piling))
+
+int n,m,s1=0,s2=0;
+cin>>n>>m;
+if(n>=m){
+	s1=(m/2)*n;
+	if(n%2!=0){
+		s2=n/2;
+	}
+}
+else{
+	s1=(n/2)*m;
+	if(n%2!=0){
+		s2=m/2;
+	}
+}
+cout<<s1+s2;
+*/
+/*
+//------------number 117(Round 173(div 2) problem A(Bit++))
+int x=0,i,n;
+string oper;
+cin>>n;
+for(i=0;i<n;i++){
+	cin>>oper;
+if(oper=="++X"||oper=="X++") x++;
+else if(oper=="--X"||oper=="X--") x--;
+
+}
+cout<<x;
+*/
+/*
+//------------number 118(Round 161(div 2) problem A(Beautiful Matrix ))
+int i,j,xj,yi,a[100][100],s1=0,s2=0;
+for(i=1;i<=5;i++){
+	for(j=1;j<=5;j++){
+		cin>>a[i][j];
+		if(a[i][j]==1){
+			xj=j;
+			yi=i;
+		}
+	}
+}
+if(xj>3) s1=(xj-3);
+else if(xj<3) s1=(3-xj);
+if(yi>3) s2=yi-3;
+else if(yi<3) s2=3-yi;
+
+cout<<s1+s2;
+*/
+/*
+//------------number 118(Round 85(div 2) problem A(Petya and Strings))
+int i,sm1=0,sm2=0;
+string 	strg1,strg2;
+cin>>strg1>>strg2;
+for(i=0;i<strg1.length();i++){
+	if(tolower(strg1[i])>tolower(strg2[i])){
+	sm1++;		
+	break;
+	}
+	 else if(tolower(strg1[i])<tolower(strg2[i])){
+	 sm2++;		
+	break;
+	}		
+	
+}
+if(sm1>sm2) cout<<1;
+else if(sm1<sm2) cout<<-1;
+else if(sm1==sm2)  cout<<0;
+*/
+/*
+//------------number 119(Round 197(div 2) problem A(helpful Maths))
+int i,j;
+string a;
+cin>>a;
+for(i=0;i<=a.length();i+=2){
+	for(j=i+2;j<=a.length();j+=2){
+		if(int(a[i])>int(a[j])){
+			swap(a[i],a[j]);
+		}	
+	}
+}
+cout<<endl<<a;
+*/
+/*
+//------------number 120(Round 172(div 2) problem A(Word Capitalization))
+int i;
+string a;
+cin>>a;
+if(a[0]!=toupper(a[0])){
+	a[0]=toupper(a[0]);
+}
+cout<<endl<<a;
+*/
+
+//------------number 121(Round 4(div 2) problem C(Registration system))
+/*
+int i,j,k,n,sum=0;
+string s[100];
+deque <string> arr;
+bool bl=false, tr=false;
+cin>>n;
+for(i=0;i<n;i++){
+cin>>s[i];
+}
+cout<<endl;
+
+for(i=0;i<n;i++){
+	for(j=0;j<n;j++){
+		if(i!=j){
+			if(i==0){
+					if(s[i]==s[j]&& i!=j){
+				bl=true;
+					break;
+				arr.push_back(s[i]);
+				}
+				else{
+					bl=false;
+				}
+			}
+			
+			else{
+				for( k=0;k<arr.size();k++){
+						if(s[i]==s[j]&& i!=j&&arr[k]!=s[i]){
+							bl=true;
+							tr=true;
+							break;
+						}
+						else{
+							bl=false;
+						}
+				}
+			}
+			if(tr=true) break;
+		}
+	}
+if(bl==false){
+	cout<<endl<<"OK"<<endl;
+}
+else if (bl==true){
+cout<<endl<<s[j]<<"1"<<endl;	
+}
+
+bl=false;
+tr=false;
+}
+*/
+//------------number 121(Round 4(div 2) problem C(Registration system))=======meore-xerxi=========
+/*
+int i,n;
+string s;
+map<string,int> str;
+
+cin>>n;	
+for(i=0;i<n;i++){
+cin>>s;
+	if(str[s]==0){
+		cout<<endl<<"OK"<<endl;
+		str[s]=1;
+	}
+	else{
+		cout<<endl<<s<<str[s]<<endl;
+		str[s]++;		
+	}	
+	
+}
+*/
+/*
+//------------number 122(Round 4(div 146) problem A(Boy or Girl))
+
+set<char> sum;
+int i;
+string str;
+cin>>str;
+for(i=0;i<str.length();i++){
+	sum.insert(str[i]);
+}
+if(sum.size()%2!=0){
+	cout<<endl<<"IGNORE HIM!";
+}else cout<<endl<<"CHAT WITH HER!";
+*/
+//------------number 123(Round 89(div 2) problem A(String Task))
+/*
+string str;
+cin>>str;
+for(int i=0;i<str.length();i++){
+str[i]=tolower(str[i]);
+    if(str[i]!='a'&&str[i]!='e'&&str[i]!='i'&&str[i]!='o'&&str[i]!='u'&&str[i]!='y'){
+        cout<<"."<<str[i];
+    }
+}
+*/
+//------------number 124(Round 163(div 2) problem A(Stones on the Table))
+/*
+int n,i,sum=0;
+string s;
+cin>>n;
+for(i=0;i<n;i++){
+if(i==1)  break;
+	cin>>s;
+for( i=0;i<s.length();i++){
+	if(s[i]==s[i+1])sum++;
+}
+
+}
+cout<<endl<<sum;
+*/
+//------------number 125(Round 405(div 2) problem A(Bear and Big Brother))
+/*
+int L,B,sum=0;	
+cin>>L>>B;
+	while(L<=B){
+		sum++;
+		L*=3;
+		B*=2;
+}	
+	cout<<sum;
+*/
+//------------number 126(Round 304(div 2) problem A(Soldier and Bananas))
+/*
+unsigned long long int n,k,w,sum=0 ;
+cin>>k>>n>>w;
+for(int i=1;i<=w;i++){
+	sum+=k*i;
+	
+}
+if(sum>n)cout<<sum-n;
+else cout<<"0";
+*/
+/*
+//------------number 127(Round 340(div 2) problem A(Elephant))
+long long p,x,k=5,i=0, sum=0;
+cin>>x;
+p=k;
+while(k!=0){
+	if(x-p==0){
+ 		sum=i+1;
+		break;
+	}
+	else if(x-k>=0){
+		i++;
+		x=x-k;
+		sum=i;
+		
+	}else{
+		k--;
+	}
+}
+cout<<sum;
+*/
+/*
+//------------number 128(Round 55(div 2) problem A(Word))
+int sm1=0,sm2=0;
+string word;
+cin>>word;
+for(int i=0;i<word.length();i++){
+	if(word[i]==toupper(word[i])) sm1+=1;
+	else if(word[i]==tolower(word[i])) sm2+=1;
+}
+
+cout<<endl;
+for(int i=0;i<word.length();i++){
+	if(sm1>sm2){
+		cout<<char(toupper(word[i]));
+	}
+	else {
+		cout<<char(tolower(word[i]));
+	}
+}
+*/
+/*
+//------------number 129(Round 63(div 2) problem A(Young Physicist))
+int i,j,n,sum=0;
+long long int s=0;
+int a[50][50];
+cin>>n;
+for(i=0;i<n;i++){
+	for(j=0;j<3;j++){
+		cin>>a[i][j];
+	}
+sum+=a[i][0];
+}
+
+sum==0 ? cout<<"YES" : cout<<"NO";
+*/
+/*
+//------------number 130(Round 479(div 3) problem A(Wrong Subtraction))
+int k,i;
+long long int n;
+cin>>n>>k;
+for(i=0;i<k;i++){
+	if(n%10!=0){
+		n-=1;
+	}else n=n/10;
+}
+cout<<endl<<n;
+*/
+/*
+//------------number 131(Round 77(div 2) problem A(Football))
+		string str;
+		bool bl=false;
+		int j,sum1=1,sum2=1;
+		cin>>str;
+			for(j=0;j<str.length();j++){		
+					if(str[j]=='1'&&str[j+1]=='1'){
+						sum1++;	
+					}
+					else if(sum1>=7){
+							bl=true;
+						cout<<endl<<"YES";
+						break;
+					}	
+					else if(str[j]=='1'&&str[j+1]=='0'){
+						sum1=1;
+					}
+					
+					if(str[j]=='0'&&str[j+1]=='0'){
+					 	sum2++;
+					}
+					else if(sum2>=7){
+						bl=true;
+						cout<<endl<<"YES";
+						break;
+					}
+					else if(str[j]=='0'&&str[j+1]=='1'){
+						sum2=1;
+					}
+					if(sum1>=7||sum2>=7){
+					bl=true;
+					cout<<endl<<"YES";
+					break;
+					}
+				}
+		if(bl==false) cout<<"NO";
 */
 
 /*========================================
 ===============meore kursi================
 ========================================*/
 
-//Codeforces Round 898 (Div. 4) A. Short Sort
+//Codeforces Round 898 (Div. 4) A. Short Sort +
 /*
 int t,x=0;
 string txt;
@@ -2134,7 +2693,7 @@ for(int i=0;i<t;i++){
 	else cout<<"YES"<<endl;
 }
 */
-//Codeforces Round 898 (Div. 4) B. Good Kid
+//Codeforces Round 898 (Div. 4) B. Good Kid +
 /*
 int t,n,a[10],min;
 bool check=false;
@@ -2188,103 +2747,293 @@ cout<<sum*(min+1)<<endl;
 }
 */
 
-/*===========================================================*/
-/*========================ALGORITHMS=========================*/
-/*===========================================================*/
+//Codeforces Round 898 (Div. 4) C. Target Practice  +
+/*
+int n,s=0,scr=0;
+char c[100][100];
+cin>>n;
+while(n!=0){
 
+for(int i=0;i<10;i++){
+	for(int j=0;j<10;j++){
+		cin>>c[i][j];
+		if(c[i][j]=='X'){
+		 	if((i==0 && i<=j)||(i==9 && i>=j)||
+			   (j==0 && i>=j)||(j==9 && i<=j)) scr+=1;
+			
+			else if((i==1 && i<=j)||(i==8 && i>=j)||
+			   (j==1 && i>=j)||(j==8 && i<=j))	scr+=2;
+			
+			else if((i==2 && i<=j)||(i==7 && i>=j)||
+			   (j==2 && i>=j)||(j==7 && i<=j)) scr+=3;
+			
+			else if((i==3 && i<=j)||(i==6 && i>=j)||
+			   (j==3 && i>=j)||(j==6 && i<=j)) scr+=4;
+			
+			else if((i==4 && i<=j)||(i==5 && i>=j)||
+			   (j==4 && i>=j)||(j==5 && i<=j)) scr+=5;
+		}
+	} 
+}
+cout<<endl<<scr<<endl;
+n--;
+scr=0;
+}
+*/
 
+//Codeforces Round 898 (Div. 4)	D. 1D Eraser +
+/*
+	int t,k,n,sm=0,br;
+	char s[1000000];
+	cin>>t;
+	while(t!=0){
+	cin>>k>>n;
+		for(int i=1;i<=k;i++){
+		cin>>s[i];
+		}
+		for(int i=1;i<=k;i++){
+		n!=1 ? br=i+n-1 : br=i;
+			if(s[i]=='B'){
+				sm++;
+				i=br; 
+			}	
+		}
+	cout<<sm<<endl;
+	sm=0;
+	t--;
+	}
+*/
 
+/*============================================================*/
+/*=========================ALGORITHMS=========================*/
+/*============================================================*/
 
 /*=========BUBBLE SORT========*/
+
 /*
+//int length= sizeof(arr) / sizeof(int); es im shemtxvevashi tu gvinda rom gavigot array s sigrdze. langth() function ar mushaobs array ze 
+
+
 int n,i,j,a[100];
+bool p;
 
-cin>>n;
 srand(time(0));
-for(i=0;i<n;i++){
-			a[i]=10+rand()%31;	
-}
-
-for(i=0;i<n;i++){
-	cout<<setw(4)<<a[i];
+for(i=0;i<8;i++){
+		a[i]=10+rand()%31;	
+		cout<<setw(4)<<a[i];
 }
 
 cout<<endl;
-*/
 
-
-/*==
-for(i=0;i<n-1;i++){
-	for(j=0;j<n-i;j++){
+for(i=0;i<8-1;i++){
+	for(int j=0;j<8-1;j++){
 		if(a[j]<a[j+1]){
-			swap(a[j],a[j+1]);
+			swap(a[j],a[j+1]);	
 		}
+	
 	}	
 }
-==*/
-/*
-	for(i=0;i<n-1;i++){
-		for(int j=0;j<n-1;j++){
-			if(a[j]<a[j+1]){
-				swap(a[j],a[j+1]);
-			}
-			
-		}	
-	}
 
-
+        
 cout<<endl;
-for(i=0;i<n;i++){
+for(i=0;i<8;i++){
 	cout<<setw(4)<<a[i];
 }
 */
+
 /*=========SELECTION SORT========*/
-
 /*
-int n,i,j,a[100];
+int n,i,j,a[100],mx=a[0],k;
 
 cin>>n;
 srand(time(0));
-for(i=0;i<n;i++){
-			a[i]=10+rand()%31;	
-}
 
 for(i=0;i<n;i++){
+	a[i]=10+rand()%31;	
 	cout<<setw(4)<<a[i];
 }
 
 cout<<endl;
-*/
-/*==
-for(i=0;i<n-1;i++){
-	for(j=0;j<n-i;j++){
-		if(a[j]<a[j+1]){
-			swap(a[j],a[j+1]);
-		}
-	}	
-}
-==*/
-/*
+
 	for(i=0;i<n-1;i++){
-		for(int j=0;j<n-1;j++){
-			if(a[j]<a[j+1]){
-				swap(a[j],a[j+1]);
+		mx=a[i];
+		for( j=i+1;j<n;j++){
+			if(mx<a[j]){
+				mx=a[j];
+				k=j;
 			}
-			
+	a[k]=a[i];
+	a[i]=mx;
 		}	
 	}
-
-
+	
 cout<<endl;
 for(i=0;i<n;i++){
 	cout<<setw(4)<<a[i];
 }
 */
 
+/*=========BINARY_SEARCH========*/
 
+/*
+//         0 1 2 3 4 5 6 7 8 9
+ int a[]={10,9,8,6,5,4,3,2,1,0};
+int x=2,l=0,r=10-1,m;
+bool p=false;
+while(l<r &&p==false){
+m=(l+r)/2;
+
+	if(a[m]==x){
+		p=true;	S
+	}
+	else if(a[m]>x){
+		l=m+1;
+	}
+	else{
+		r=m-1;
+	}
+
+}
+if(p==true)cout<<"YES"<<" "<<m;
+ else cout<<"NO";
+ */
+ 
+//=========BINARY_SEARCH========(martivi xerxi)
+
+/*
+//         0 1 2 3 4 5 6 7 8 
+ int a[9]={9,8,6,5,4,3,2,1,0};
+int x=2,l=0,r=9-1,m;
+while(l<r){
+m=(l+r)/2;
+	 if(a[m]>x){
+		l=m+1;
+	}
+	else{
+		r=m;
+	}
+}
+a[r]==x ? cout<<"YES"<<" "<<r : cout<<"NO";
+*/
+
+/*=========INSERTION SORT========*/
+
+/*
+int a[100],n,i,j;
+
+cin>>n;
+for(i=0;i<n;i++){
+	cin>>a[i];
+}
+
+for(i=0;i<n;i++){
+	int current=a[i];
+	int j=i+1;
+	while(j>=0&&a[j]>current){
+		a[j+1]=a[j];
+		j++;
+	}	
+	a[j+1]=current;
 }
 
 
+for(i=0;i<n;i++){
+	cout<<setw(4)<<a[i];
+}
 
 
+/*=========INSERTION SORT using binary search========*/
+
+/*
+ int a[9]={9,8,6,5,4,3,2,1,0};
+ int j,i,mid,left,right,current,k;
+ 
+for(i=0;i<9-1;i++){
+	left=0;
+	right=i;
+while(left<right){
+	mid=(left+right)/2;
+	if(a[mid]>a[i]){
+		left=mid+1;
+	}
+	else{
+	right=mid;
+	}
+}
+ k=right;
+	current =a[i];	
+for(j=i;j>=k+1;j--){
+	a[j]=a[j-1];
+}
+a[k]=current;
+}
+*/
+
+/*========Finding all divisors of number with determining primality of number-algorithm=========*/
+
+/*
+string p="Primme Number";
+int b[100],i,a,k;
+cin>>a;
+k=1;
+b[0]=1;
+b[1]=a;
+for(i=2;i<=a/2;i++){
+	if(a%i==0){
+		k++;
+		b[k]=i;
+		p="Composed Number";
+	}
+}
+cout<<endl<<p<<endl;
+for(i=0;i<=k;i++)
+cout<<setw(4)<<b[i];
+*/
+
+/*
+string p="Primme Number";
+int b[100],i,arr,k;
+cin>>arr;
+b[0]=1;
+b[1]=arr;
+k=1;
+for(i=2;i<=arr/2;i++){
+	if(arr%i==0){
+		k++;
+		b[k]=i;
+		p="Composed Number";
+	}
+}
+cout<<endl<<p<<endl;
+for(i=0;i<k;i++){
+for(int j=0;j<k;j++){
+	if(b[j+1]<b[j]) swap(b[j],b[j+1]);
+}
+}
+
+for(i=0;i<=k;i++){
+cout<<b[i]<<" ";
+
+}
+*/
+
+}
+
+/*
+#include <iostream>
+#include <bits/stdc++.h>
+#include <cmath>
+#include <math.h>
+#include <string.h>
+#include <algorithm>
+#include <string>
+#include <conio.h>
+#include <stdio.h>
+#include <cctype>
+#include <set>
+#include <vector>
+#include <map>
+#include <deque>
+using namespace std;
+*/
     
