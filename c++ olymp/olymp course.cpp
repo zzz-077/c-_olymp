@@ -8,7 +8,7 @@
 #include <conio.h>
 #include <stdio.h>
 #include <cctype>
-#include <set>
+#include <set>011178777
 #include <vector>
 #include <map>
 #include <deque>
@@ -2723,10 +2723,9 @@ for(int j=0;j<n;j++){
 	
 cout<<sum<<endl;
 }
-
+*/
 //(meore xerxi)
 
-*/
 /*
 int t,n,a[10],min=0;
 unsigned long long int sum=1;
@@ -2804,220 +2803,285 @@ scr=0;
 	}
 */
 
-/*============================================================*/
-/*=========================ALGORITHMS=========================*/
-/*============================================================*/
 
-/*=========BUBBLE SORT========*/
-
+//Codeforces Round 898 (Div. 4)	E. Building an Aquarium	-
 /*
-//int length= sizeof(arr) / sizeof(int); es im shemtxvevashi tu gvinda rom gavigot array s sigrdze. langth() function ar mushaobs array ze 
-
-
-int n,i,j,a[100];
-bool p;
-
-srand(time(0));
-for(i=0;i<8;i++){
-		a[i]=10+rand()%31;	
-		cout<<setw(4)<<a[i];
-}
-
-cout<<endl;
-
-for(i=0;i<8-1;i++){
-	for(int j=0;j<8-1;j++){
-		if(a[j]<a[j+1]){
-			swap(a[j],a[j+1]);	
+	int t,n,x,a[100000],m,sum=0,h=1,k=1,itt=0;
+	bool check=false;
+	cin>>t;
+	while(t!=0){
+		sum=0;
+		k=1;
+		h=1;
+		cin>>n>>x;
+		for(int i=0;i<n;i++){
+			cin>>a[i];	
 		}
+		for(int i=0;i<n-1;i++){
+			for(int j=0;j<n-1;j++){
+			if(a[j+1]<=a[j]) swap(a[j+1],a[j]);
+			}	
+		}	
 	
-	}	
-}
-
-        
-cout<<endl;
-for(i=0;i<8;i++){
-	cout<<setw(4)<<a[i];
-}
+	
+	for(int i=0;i<n;i++){
+		if(i==0)sum+=a[i];
+		for(int j=i+1;j<i+2;j++){
+			if(a[i]==a[j]){
+					k++;
+				while(a[i]==a[j]&& abs((k*h)-sum)<=x){
+					itt++;
+					if(itt=1)sum+=a[j];
+					h+=1;	
+				}
+			
+	//			if(h!=a[j]){	
+	//				while(h!=a[j] && abs((k*h)-sum)<=x){	
+	//					itt++;
+	//					if(itt=1)sum+=a[j];
+	//					h+=1;
+	//				}
+	//			}else sum+=a[j];	
+	//			itt=0;
+	
+	
+				itt=0;
+	//			h=h/2;
+	
+			}
+			else{
+					k++;
+				while(h!=a[j] &&abs((k*h)-sum)<=x){
+					itt++;
+					if(itt=1)sum+=a[j];
+					h+=1;
+				}
+				itt=0;
+			}
+			
+	 if(abs((k*h)-sum)>=x){
+				cout<<"HEIGHT:"<<h-1;
+				check=true;
+				break;
+			} 
+		}
+	if(check==true)	break;
+	}
+		cout<<endl;
+		t--;
+	
+	}
 */
-
-/*=========SELECTION SORT========*/
+//Codeforces Beta Round 84 (Div. 2 Only) A. Nearly Lucky Number +
 /*
-int n,i,j,a[100],mx=a[0],k;
+int i,k=0;
+string num;
+cin>>num;
 
+for(i=0;i<num.length();i++){
+	if(num[i]=='4'||num[i]=='7')k++;
+}
+if(k==4||k==7) cout<<endl<<"YES";
+else cout<<endl<<"NO";
+*/
+//Codeforces Round 379 (Div. 2)A. Anton and Danik +
+/*
+int i,n;
+long long k1=0,k2=0;
+string num;
+cin>>n>>num;
+for(i=0;i<n;i++){
+	if(num[i]=='A')k1++;
+	else if(num[i]=='D') k2++;
+}
+if(k1>k2) cout<<"Anton";
+else if(k1<k2) cout<<"Danik";
+else cout<<"Friendship";
+*/
+//Codeforces Beta Round 40 (Div. 2) A. Translation	+
+/*
+int i,k=0;
+string txt1, txt2;
+cin>>txt1>>txt2;
+reverse(txt1.begin(), txt1.end());
+	
+for(int i=0;i<txt1.length();i++){
+	if(txt1[i]==txt2[i]){
+		k++;
+	}
+}
+
+if(k==txt1.length())	cout<<"YES";
+else cout<<"NO";
+*/
+//Codeforces Beta Round 87 (Div. 2 Only) A. Tram +
+/*
+int n,i,exit,enter,sum=0,mx=0;
 cin>>n;
-srand(time(0));
 
 for(i=0;i<n;i++){
-	a[i]=10+rand()%31;	
-	cout<<setw(4)<<a[i];
+	cin>>exit>>enter;
+
+sum+=(-exit)+enter;
+if(mx<sum)	mx=sum;
 }
+cout<<mx;
+*/
 
-cout<<endl;
+/*
+///Codeforces Round 886 (Div. 4) A. To My Critics +
+int t,a,b,c,i;
+cin>>t;
+i=0;
+while(i<t){
+	cin>>a>>b>>c;
+		if(a+b>=10 ||a+c>=10 || c+b>=10) cout<<"YES"<<endl;	
+		else cout<<"NO"<<endl;
+	i++;
+}
+*/
+/*
+///Codeforces Round 886 (Div. 4) B. Ten Words of Wisdom +
+int t,n,a[100010],b[10010],i,j,arr[10000],itt=-1,mx,x,resp[10000];
+cin>>t;
+i=0;
+while(i<t){
+	cin>>n;
+	for(j=0;j<n;j++){
+		cin>>a[j]>>b[j];
+		if(a[j]<=10){
+			itt++;
+			arr[itt]+=b[j];
+			resp[itt]+=j;
+		}
+	}
+	mx=arr[0];
+	for(j=0;j<=itt;j++){
+		if(mx<=arr[j]) {
+			mx=arr[j];
+			x=resp[j];
+		}
+	}
+	cout<<x+1<<endl;
+	for(j=0;j<=itt;j++){
+		arr[j]=0;
+		resp[j]=0;
+	}
+	itt=-1;
+	x=0;
+	i++;
+}
+*/
+///Codeforces Round 886 (Div. 4) C. Word on the Paper +
+/*
+int i,j,t,k;
+char obj[1000][1000];
+vector <char> text;
 
-	for(i=0;i<n-1;i++){
-		mx=a[i];
-		for( j=i+1;j<n;j++){
-			if(mx<a[j]){
-				mx=a[j];
-				k=j;
+cin>>t;
+k=0;
+while(k!=t){
+	for(i=0;i<8;i++){
+		for(j=0;j<8;j++){
+			cin>>obj[i][j];
+			if(obj[i][j]!='.'){
+				text.push_back(obj[i][j]);
 			}
-	a[k]=a[i];
-	a[i]=mx;
 		}	
 	}
+	cout<<endl;
+	for(int itt=0;itt<text.size();itt++){
+		cout<<text[itt];
+	}
+	text.clear();
+	cout<<endl;
+k++;
+}
+*/
+
+//Codeforces Round 886 (Div. 4) D. Balanced Round +
+/*
+int t,n,i,j,k,p,sum=1,mx,a[222222];
+bool check=false;
+cin>>t;
+i=0;
+while(i<t){
+	cin>>n>>k;
+	for(j=0;j<n;j++){
+		cin>>a[j];
+ 	}	 
+//	for(j=0;j<n-1;j++){
+//		for( p=0;p<n-1;p++){
+//			if(a[p]>a[p+1]){
+//				swap(a[p],a[p+1]);
+//				check=true;
+//			}
+//		}
+//		if (check!=true) break;
+//	}	
+sort(a,a+n);
+	 
+mx=0;
+	for(j=0;j<n-1;j++){
+		for( p=j;p<j+1;p++){
+			if(a[p+1]-a[p]<=k){
+				sum++;
+			}else sum=1;
+		}
+		if(mx<sum) mx=sum; 
+	}
+	if(mx<sum) mx=sum;
+	if(n-mx<=0) cout<<0<<endl;
+	else cout<<n-mx<<endl;
+	check=false;
+	sum=1;
+	i++;
+}
+*/
+//Codeforces Round 886 (Div. 4) E. Cardboard for Pictures -
+/*
+int i,j,t,n,s[222222],w,sum=0;
+long long int c;
+cin>>t;
+i=0;
+while(i<t){
+	cin>>n>>c;
+	for(j=0;j<n;j++){
+		cin>>s[j];
+	}
+	i++;
+}
+*/
+
+/*
+//Codeforces Round 871 (Div. 4) D. Gold Rush 	
+bool check(int n,int m){
+	if(n==m) return true;
+	else if(n%3!=0) return false;
+	else return (check(n/3,m) || check(2*n/3,m));
+}
+
+int main(){
+int t,n,m,i;
+cin>>t;
+i=0;
+while(i<t){
+	cin>>n>>m;
+	check(n,m) ? cout<<"YES"<<endl : cout<<"NO"<<endl;
+	i++;
+}	
+
+}
+*/
 	
-cout<<endl;
-for(i=0;i<n;i++){
-	cout<<setw(4)<<a[i];
-}
-*/
-
-/*=========BINARY_SEARCH========*/
-
-/*
-//         0 1 2 3 4 5 6 7 8 9
- int a[]={10,9,8,6,5,4,3,2,1,0};
-int x=2,l=0,r=10-1,m;
-bool p=false;
-while(l<r &&p==false){
-m=(l+r)/2;
-
-	if(a[m]==x){
-		p=true;	S
-	}
-	else if(a[m]>x){
-		l=m+1;
-	}
-	else{
-		r=m-1;
-	}
+  
 
 }
-if(p==true)cout<<"YES"<<" "<<m;
- else cout<<"NO";
- */
- 
-//=========BINARY_SEARCH========(martivi xerxi)
-
-/*
-//         0 1 2 3 4 5 6 7 8 
- int a[9]={9,8,6,5,4,3,2,1,0};
-int x=2,l=0,r=9-1,m;
-while(l<r){
-m=(l+r)/2;
-	 if(a[m]>x){
-		l=m+1;
-	}
-	else{
-		r=m;
-	}
-}
-a[r]==x ? cout<<"YES"<<" "<<r : cout<<"NO";
-*/
-
-/*=========INSERTION SORT========*/
-
-/*
-int a[100],n,i,j;
-
-cin>>n;
-for(i=0;i<n;i++){
-	cin>>a[i];
-}
-
-for(i=0;i<n;i++){
-	int current=a[i];
-	int j=i+1;
-	while(j>=0&&a[j]>current){
-		a[j+1]=a[j];
-		j++;
-	}	
-	a[j+1]=current;
-}
 
 
-for(i=0;i<n;i++){
-	cout<<setw(4)<<a[i];
-}
+	
 
 
-/*=========INSERTION SORT using binary search========*/
-
-/*
- int a[9]={9,8,6,5,4,3,2,1,0};
- int j,i,mid,left,right,current,k;
- 
-for(i=0;i<9-1;i++){
-	left=0;
-	right=i;
-while(left<right){
-	mid=(left+right)/2;
-	if(a[mid]>a[i]){
-		left=mid+1;
-	}
-	else{
-	right=mid;
-	}
-}
- k=right;
-	current =a[i];	
-for(j=i;j>=k+1;j--){
-	a[j]=a[j-1];
-}
-a[k]=current;
-}
-*/
-
-/*========Finding all divisors of number with determining primality of number-algorithm=========*/
-
-/*
-string p="Primme Number";
-int b[100],i,a,k;
-cin>>a;
-k=1;
-b[0]=1;
-b[1]=a;
-for(i=2;i<=a/2;i++){
-	if(a%i==0){
-		k++;
-		b[k]=i;
-		p="Composed Number";
-	}
-}
-cout<<endl<<p<<endl;
-for(i=0;i<=k;i++)
-cout<<setw(4)<<b[i];
-*/
-
-/*
-string p="Primme Number";
-int b[100],i,arr,k;
-cin>>arr;
-b[0]=1;
-b[1]=arr;
-k=1;
-for(i=2;i<=arr/2;i++){
-	if(arr%i==0){
-		k++;
-		b[k]=i;
-		p="Composed Number";
-	}
-}
-cout<<endl<<p<<endl;
-for(i=0;i<k;i++){
-for(int j=0;j<k;j++){
-	if(b[j+1]<b[j]) swap(b[j],b[j+1]);
-}
-}
-
-for(i=0;i<=k;i++){
-cout<<b[i]<<" ";
-
-}
-*/
-
-}
 
 /*
 #include <iostream>
