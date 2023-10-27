@@ -3075,32 +3075,85 @@ while(i<t){
 */
 
 //Codeforces Round 905 (Div. 3) A. Morning
-int b[]={1,2,3,4,5,6,7,8,9,0};
+//          1 2 3 4 5 6 7 8 9 10    
+int b[]={-1,1,2,3,4,5,6,7,8,9,0};
 int blen= sizeof(b) /sizeof(b[0]);
-int i,j,a[222222],n,t=-1,sum=0;
+int i,j,a[222222],n,k=0,t=0,click=0;
 cin>>n;
+
 i=0;
 while (i<n){
-	for(j=0;j<4;j++){
+	for(j=1;j<=4;j++){
 		cin>>a[j];	
-		for(int l=0;l<blen;l++){
-			if(j!=0 &&a[j]==a[j-1]){
-			sum++;
-			break;
-			}
-			else if(a[j]==b[l]){
-				t=l;
-			sum++;
-			break;
-			}
-			else{
-				t++;
-			}
-		}
-		cout<<"Time:"<<sum+t<<endl;
 	}
-sum=0;
-t=-1;;
+/*
+1 1 1 1
+1   
+1 2 3 6
+8
+1 0 1 0
+30
+1 9 2 0
+20
+9 2 7 3
+27
+0 0 0 0
+42
+7 4 9 2
+24
+8 5 4 3
+15
+0 2 9 4
+26
+8 3 6 1
+23
+*/
+	for(j=1;j<=4;j++){
+		for(int l=1;l<=blen;l++){
+				if(j!=1)l=k;
+			 
+				if(a[j]==b[l]){
+					if(l==1)t+=l-1;
+					else 
+					{t+=l;
+					cout<<"if1="<<t<<endl;
+					}
+					k=l;
+					click++;
+					break;
+				}
+				else if(a[j]<b[l] &&a[j]==0&&b[l]==1){
+					t +=9;
+					k=10;
+					click++;
+					break;
+				}
+				else if(a[j]>b[l] &&a[j]==1&&b[l]==0){
+					t +=9;
+					k=1;
+					click++;
+					break;
+				}
+				else if(a[j]>b[l]){
+					t +=a[j]-b[l];
+					k=a[j];
+					click++;
+					cout<<"if2="<<t<<endl;
+					break;
+				}
+				else if(a[j]<b[l]){
+					t+=b[l]-a[j];
+					k=a[j];
+					click++;
+					cout<<"if3="<<t<<endl;
+				break;
+				}
+		}
+	}
+	cout<<"Time:"<<click+t<<endl;
+click=0;
+t=0;
+k=0;
 i++;
 }
 
