@@ -3052,146 +3052,28 @@ cout<<endl<<sum;
 	}
 	*/
 
-	// Codeforces Round 905 (Div. 3) A. Morning
-	//           1 2 3 4 5 6 7 8 9 10
-	int b[] = {-1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
-	int blen = sizeof(b) / sizeof(b[0]);
-	int i, j, a[222222], n, k = 0, t = 0, click = 0;
-	cin >> n;
-
-	i = 0;
-	while (i < n)
+	// Codeforces Round 905 (Div. 3) A. Morning +
+	/*
+	int t;
+	cin >> t;
+	while (t > 0)
 	{
-		for (j = 1; j <= 4; j++)
+		int k = 1, i, ans = 0;
+		string s;
+		cin >> s;
+		for (i = 0; i < 4; i++)
 		{
-			cin >> a[j];
+			int num = s[i] - '0';
+			if (num == 0)
+				num = 10;
+			ans += abs(num - k) + 1;
+			k = num;
 		}
-		/*
-		1 1 1 1
-		4
-		1 2 3 6
-		9
-		1 0 1 0
-		31
-		1 9 2 0
-		27
-		9 2 7 3
-		28
-		0 0 0 0
-		13
-		7 4 9 2 -
-		25-15
-		8 5 4 3 -
-		16-14
-		0 2 9 4
-		33
-		8 3 6 1
-		24
-		*/
-		for (j = 1; j <= 4; j++)
-		{
-			for (int l = 1; l <= blen; l++)
-			{
-				if (j != 1)
-					l = k;
-				if (j == 1)
-				{
-					if (a[j] >= b[l])
-					{
-						t += a[j] - b[l];
-						k = a[j];
-						click++;
-						// cout << "if_2_1=" << t << endl;
-						break;
-					}
-					else if (a[j] < b[l])
-					{
-						if (a[j] == 0)
-						{
-							t += 10 - b[l];
-							k = 10;
-						}
-						else
-						{
-							t += b[l] - a[j];
-							k = a[j];
-						}
-						click++;
-						// cout << "if_3_1=" << t << endl;
-						break;
-					}
-				}
-				else
-				{
-
-					if (a[j] < b[l] && a[j] == 0 && b[l] == 1)
-					{
-						t += 9;
-						k = 10;
-						click++;
-						break;
-					}
-					else if (a[j] > b[l] && a[j] == 1 && b[l] == 0)
-					{
-						t += 9;
-						k = 1;
-						click++;
-						break;
-					}
-					else if (j >= l)
-					{
-						if (a[j] == 0)
-						{
-							if (b[l] == 0)
-								t += 0;
-							else
-								t += 10 - l;
-							k = 10;
-						}
-						else
-						{
-							t += a[j] - b[l];
-							k = a[j];
-						}
-						click++;
-						// cout << "if2=" << t << endl;
-						break;
-					}
-					else if (j < l)
-					{
-						if (b[l] == 0)
-						{
-							if (a[j] == 0)
-							{
-								t += 0;
-								k = 10;
-							}
-							else
-							{
-								t += 10 - a[j];
-								k = a[j];
-							}
-						}
-						else
-						{
-							t += b[l] - a[j];
-							k = a[j];
-						}
-						click++;
-						// cout << "if3=" << t << endl;
-						break;
-					}
-				}
-			}
-		}
-		cout << "Time:" << click + t << endl;
-		click = 0;
-		t = 0;
-		k = 0;
-		i++;
+		cout << ans << endl;
+		t--;
 	}
+	*/
 }
-
 /*
 #include <iostream>
 #include <bits/stdc++.h>
