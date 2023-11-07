@@ -3105,6 +3105,7 @@ t=-1;;
 i++;
 */
 //Codeforces Round 905 (Div. 3) B. Chemistry
+/*
 int i,t,k,n,sum=0,a[200];
 string s;
 cin>>t;
@@ -3121,7 +3122,7 @@ while(t--){
 	else cout<<"YES"<<endl;
 	sum=0;
 }
-
+*/
 
 }
 
