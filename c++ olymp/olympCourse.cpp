@@ -3075,6 +3075,7 @@ while(i<t){
 */
 
 //Codeforces Round 905 (Div. 3) A. Morning
+/*
 int b[]={1,2,3,4,5,6,7,8,9,0};
 int blen= sizeof(b) /sizeof(b[0]);
 int i,j,a[222222],n,t=-1,sum=0;
@@ -3102,12 +3103,30 @@ while (i<n){
 sum=0;
 t=-1;;
 i++;
+*/
+//Codeforces Round 905 (Div. 3) B. Chemistry
+int i,t,k,n,sum=0,a[200];
+string s;
+cin>>t;
+while(t--){
+
+	memset(a,0,sizeof(a));
+	cin>>n>>k>>s;
+	for(i=0;i<n;i++) 
+		a[s[i]]++;
+	for(i='a';i<='z';i++) 
+		if(a[i]%2!=0) sum++;
+
+	if(sum-k>1) cout<<"NO"<<endl;
+	else cout<<"YES"<<endl;
+	sum=0;
 }
 
 
-	
-
 }
+
+
+
 
 
 	
