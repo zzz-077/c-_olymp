@@ -3074,44 +3074,47 @@ cout<<endl<<sum;
 	}
 	*/
 
-//Codeforces Round 905 (Div. 3) B. Chemistry+
-/*
-int i,t,k,n,sum=0,a[200];
-string s;
-cin>>t;
-while(t--){
+	// Codeforces Round 905 (Div. 3) B. Chemistry+
+	/*
+	int i,t,k,n,sum=0,a[200];
+	string s;
+	cin>>t;
+	while(t--){
 
-	memset(a,0,sizeof(a));
-	cin>>n>>k>>s;
-	for(i=0;i<n;i++) 
-		a[s[i]]++;
-	for(i='a';i<='z';i++) 
-		if(a[i]%2!=0) sum++;
+		memset(a,0,sizeof(a));
+		cin>>n>>k>>s;
+		for(i=0;i<n;i++)
+			a[s[i]]++;
+		for(i='a';i<='z';i++)
+			if(a[i]%2!=0) sum++;
 
-	if(sum-k>1) cout<<"NO"<<endl;
-	else cout<<"YES"<<endl;
-	sum=0;
-}
-*/
-//Codeforces Round 905 (Div. 3) C. Raspberries
-int i,t,n,k,s,a[1000],mn;
-cin>>t;
-while(t--){
-	cin>>n>>k;
-	s=0;
-	mn=100000;
-	for(i=0;i<n;i++){
-		cin>>a[i];
-		s=k-a[i]%k;
-		if(mn>s && s!=0) mn=s;
-		else if( a[i]%k==0){ 
-			mn=0;
-			break;
-		}
+		if(sum-k>1) cout<<"NO"<<endl;
+		else cout<<"YES"<<endl;
+		sum=0;
 	}
-	cout<<mn<<endl;
-}
-
+	*/
+	// Codeforces Round 905 (Div. 3) C. Raspberries
+	int i, t, n, k, s, a[1000], mn;
+	cin >> t;
+	while (t--)
+	{
+		cin >> n >> k;
+		s = 0;
+		mn = 100000;
+		for (i = 0; i < n; i++)
+		{
+			cin >> a[i];
+			s = k - a[i] % k;
+			if (a[i] % k == 0)
+			{
+				mn = 0;
+				break;
+			}
+			else if (mn > s && s != 0)
+				mn = s;
+		}
+		cout << mn << endl;
+	}
 }
 
 /*
