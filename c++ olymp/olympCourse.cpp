@@ -3074,7 +3074,7 @@ cout<<endl<<sum;
 	}
 	*/
 
-//Codeforces Round 905 (Div. 3) B. Chemistry
+//Codeforces Round 905 (Div. 3) B. Chemistry+
 /*
 int i,t,k,n,sum=0,a[200];
 string s;
@@ -3093,6 +3093,25 @@ while(t--){
 	sum=0;
 }
 */
+//Codeforces Round 905 (Div. 3) C. Raspberries
+int i,t,n,k,s,a[1000],mn;
+cin>>t;
+while(t--){
+	cin>>n>>k;
+	s=0;
+	mn=100000;
+	for(i=0;i<n;i++){
+		cin>>a[i];
+		s=k-a[i]%k;
+		if(mn>s && s!=0) mn=s;
+		else if( a[i]%k==0){ 
+			mn=0;
+			break;
+		}
+	}
+	cout<<mn<<endl;
+}
+
 }
 
 /*
