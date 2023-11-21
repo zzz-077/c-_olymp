@@ -3094,95 +3094,107 @@ cout<<endl<<sum;
 	}
 	*/
 	// Codeforces Round 905 (Div. 3) C. Raspberries +
-/*
-	int i, t, n, k, s, a[1000], mn;
-	cin >> t;
-	while (t--)
-	{
-		cin >> n >> k;
-		s = 0;
-		mn = 100000;
-		for (i = 0; i < n; i++)
+	/*
+		int i, t, n, k, s, a[1000], mn;
+		cin >> t;
+		while (t--)
 		{
-			cin >> a[i];
-			s = k - a[i] % k;
-			if (a[i] % k == 0)
+			cin >> n >> k;
+			s = 0;
+			mn = 100000;
+			for (i = 0; i < n; i++)
 			{
-				mn = 0;
-				break;
+				cin >> a[i];
+				s = k - a[i] % k;
+				if (a[i] % k == 0)
+				{
+					mn = 0;
+					break;
+				}
+				else if (mn > s && s != 0)
+					mn = s;
 			}
-			else if (mn > s && s != 0)
-				mn = s;
+			cout << mn << endl;
 		}
-		cout << mn << endl;
-	}
-*/
-//Codeforces Round 900 (Div. 3) A. How Much Does Daytona Cost? +
-/*int t,n,k,a,i,s;
-cin>>t;
-while(t--){
-	cin>>n>>k;
-	s=0;
-	for(i=0;i<n;i++){
-		cin>>a;
-		if(a==k) s++;
-	}
-		if(s==0) cout<<"NO"<<endl;
-		else cout<<"YES"<<endl;
+	*/
+	// Codeforces Round 900 (Div. 3) A. How Much Does Daytona Cost? +
+	/*int t,n,k,a,i,s;
+	cin>>t;
+	while(t--){
+		cin>>n>>k;
+		s=0;
+		for(i=0;i<n;i++){
+			cin>>a;
+			if(a==k) s++;
+		}
+			if(s==0) cout<<"NO"<<endl;
+			else cout<<"YES"<<endl;
 
-}
-*/
-//Codeforces Round 900 (Div. 3) B. Aleksa and Stack +
-/*int n,t,a[100000];
-cin>>t;
-while(t--){
-	cin>>n;
-	for(int i=0;i<n;i++) cout<<i*2+1<<" ";
-cout<<endl;
-}
-*/
-//Codeforces Round 900 (Div. 3) C. Vasilije in Cacak +
-/*int t;
-long long k,n,x;
-cin>>t;
-while(t--){
-	cin>>n>>x>>k;
-if(((x+1)*x)/2<=k &&(((n-x+1)+n)*x)/2>=k) cout<<"YES"<<endl;
-else cout<<"NO"<<endl;
-}
-*/
-//Codeforces Round 904 (Div. 2) B. Simple Design +
-/*
-int t,k;
-long x;
-bool p;
-    cin>>t;
-    while(t--){
-        cin>>x>>k;
-        int sum = 0,xx=x;
-		 p =false;
-		while(p==false){
-			x=xx;
-			while(x>0){
-				sum+=x%10;
-				x/=10;
-			}
-			if(sum%k==0) {
-				cout<<xx<<endl;
-				p=true;
-			}
-			else{
-				xx++;
-				sum=0;
+	}
+	*/
+	// Codeforces Round 900 (Div. 3) B. Aleksa and Stack +
+	/*int n,t,a[100000];
+	cin>>t;
+	while(t--){
+		cin>>n;
+		for(int i=0;i<n;i++) cout<<i*2+1<<" ";
+	cout<<endl;
+	}
+	*/
+	// Codeforces Round 900 (Div. 3) C. Vasilije in Cacak +
+	/*int t;
+	long long k,n,x;
+	cin>>t;
+	while(t--){
+		cin>>n>>x>>k;
+	if(((x+1)*x)/2<=k &&(((n-x+1)+n)*x)/2>=k) cout<<"YES"<<endl;
+	else cout<<"NO"<<endl;
+	}
+		*/
+	// Codeforces Round 904 (Div. 2) B. Simple Design +
+	/*
+	int t,k;
+	long x;
+	bool p;
+		cin>>t;
+		while(t--){
+			cin>>x>>k;
+			int sum = 0,xx=x;
+			 p =false;
+			while(p==false){
+				x=xx;
+				while(x>0){
+					sum+=x%10;
+					x/=10;
+				}
+				if(sum%k==0) {
+					cout<<xx<<endl;
+					p=true;
+				}
+				else{
+					xx++;
+					sum=0;
+				}
 			}
 		}
-    }
-*/
-//Codeforces Round 904 (Div. 2) A. Haunted House +
-	
+	*/
+	// Codeforces Round 909 (Div. 3) A. Game with Integers
+	/*
+		int t, n;
+		cin >> t;
+		while (t--)
+		{
+			cin >> n;
+			if (n % 3)
+				cout << "First" << endl;
+			else
+				cout << "Second" << endl;
+		}
+		*/
+	// Codeforces Round 909 (Div. 3) B. 250 Thousand Tons of TNT
+
+	// Codeforces Round 909 (Div. 3) C. Yarik and Array
 }
-
-
 
 /*
 #include <iostream>
