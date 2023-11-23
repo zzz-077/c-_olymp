@@ -3191,8 +3191,33 @@ cout<<endl<<sum;
 				cout << "Second" << endl;
 		}
 		*/
-	// Codeforces Round 909 (Div. 3) B. 250 Thousand Tons of TNT
-
+	// Codeforces Round 909 (Div. 3) B. 250 Thousand Tons of TNT +
+	/*
+   int t,n,a[222222],i,j;
+    cin>>t;
+    while(t--){
+        cin>>n;
+        for(int i = 1;i<=n;i++){
+            cin>>a[i];
+        }
+        long long ans = 0;
+        for(i= 1;i<=n;i++){
+            long long sum = 0,mx = -1,mn = 1e18;
+            if(n%i==0){
+                for(j = 1;j<=n;j++){
+                   sum+=a[j];
+                    if(j%i==0){
+                        mx = max(mx,sum);
+                        mn = min(mn,sum);
+                        sum = 0;
+                    }
+                } 
+                ans = max(ans,mx-mn);
+            }
+        }
+        cout<<ans<<endl;
+    } 
+	*/
 	// Codeforces Round 909 (Div. 3) C. Yarik and Array
 }
 
