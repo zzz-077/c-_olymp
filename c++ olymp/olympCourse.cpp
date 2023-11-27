@@ -3218,7 +3218,32 @@ cout<<endl<<sum;
         cout<<ans<<endl;
     } 
 	*/
-	// Codeforces Round 909 (Div. 3) C. Yarik and Array
+	// Codeforces Round 909 (Div. 3) C. Yarik and Array +
+	/*
+    int  t, n, a[222222];
+    
+    cin >> t;
+    while (t--)
+    {
+        cin >> n;
+        for (int i = 0; i < n; i++)
+        {
+            cin >> a[i];
+        }
+        int minpre = min(0,a[0]),cursum = a[0],mx = a[0];
+        for(int i = 1;i<n;i++){
+            if(abs(a[i]%2)==abs(a[i-1]%2)){
+                cursum = 0;
+                minpre = 0;
+            }
+            cursum+=a[i];
+            mx = max(mx,cursum - minpre);
+            minpre = min(minpre,cursum);
+        }
+        cout<<mx<<endl;
+    }
+	*/
+
 }
 
 /*
