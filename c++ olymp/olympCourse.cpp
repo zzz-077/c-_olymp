@@ -3194,56 +3194,114 @@ cout<<endl<<sum;
 	// Codeforces Round 909 (Div. 3) B. 250 Thousand Tons of TNT +
 	/*
    int t,n,a[222222],i,j;
-    cin>>t;
-    while(t--){
-        cin>>n;
-        for(int i = 1;i<=n;i++){
-            cin>>a[i];
-        }
-        long long ans = 0;
-        for(i= 1;i<=n;i++){
-            long long sum = 0,mx = -1,mn = 1e18;
-            if(n%i==0){
-                for(j = 1;j<=n;j++){
-                   sum+=a[j];
-                    if(j%i==0){
-                        mx = max(mx,sum);
-                        mn = min(mn,sum);
-                        sum = 0;
-                    }
-                } 
-                ans = max(ans,mx-mn);
-            }
-        }
-        cout<<ans<<endl;
-    } 
+	cin>>t;
+	while(t--){
+		cin>>n;
+		for(int i = 1;i<=n;i++){
+			cin>>a[i];
+		}
+		long long ans = 0;
+		for(i= 1;i<=n;i++){
+			long long sum = 0,mx = -1,mn = 1e18;
+			if(n%i==0){
+				for(j = 1;j<=n;j++){
+				   sum+=a[j];
+					if(j%i==0){
+						mx = max(mx,sum);
+						mn = min(mn,sum);
+						sum = 0;
+					}
+				}
+				ans = max(ans,mx-mn);
+			}
+		}
+		cout<<ans<<endl;
+	}
 	*/
 	// Codeforces Round 909 (Div. 3) C. Yarik and Array +
 	/*
-    int  t, n, a[222222];
-    
-    cin >> t;
-    while (t--)
-    {
-        cin >> n;
-        for (int i = 0; i < n; i++)
-        {
-            cin >> a[i];
-        }
-        int minpre = min(0,a[0]),cursum = a[0],mx = a[0];
-        for(int i = 1;i<n;i++){
-            if(abs(a[i]%2)==abs(a[i-1]%2)){
-                cursum = 0;
-                minpre = 0;
-            }
-            cursum+=a[i];
-            mx = max(mx,cursum - minpre);
-            minpre = min(minpre,cursum);
-        }
-        cout<<mx<<endl;
-    }
-	*/
+	int  t, n, a[222222];
 
+	cin >> t;
+	while (t--)
+	{
+		cin >> n;
+		for (int i = 0; i < n; i++)
+		{
+			cin >> a[i];
+		}
+		int minpre = min(0,a[0]),cursum = a[0],mx = a[0];
+		for(int i = 1;i<n;i++){
+			if(abs(a[i]%2)==abs(a[i-1]%2)){
+				cursum = 0;
+				minpre = 0;
+			}
+			cursum+=a[i];
+			mx = max(mx,cursum - minpre);
+			minpre = min(minpre,cursum);
+		}
+		cout<<mx<<endl;
+	}
+	*/
+	/*2023-olympiad problem-K*/
+	int a, b;
+
+	cin >> a >> b;
+	if (b == 2 || b == 3 || b == 7 || b == 8)
+		cout << -1;
+	else if (a == b && sqrt(a) == static_cast<int>(sqrt(a)))
+		cout << a;
+	else if (sqrt(a * 10 + b) == static_cast<int>(sqrt(a * 10 + b)))
+		cout << a * 10 + b;
+	else if (b == 0 && sqrt(a * 100 + b) == static_cast<int>(sqrt(a * 100 + b)) && static_cast<int>(sqrt(a * 100 + b)) % 2 == 0)
+		cout << a * 100 + b;
+	else
+	{
+		int k, l, i = 1, s, p, ans, t;
+		bool check = false;
+		l = 0;
+		while (check == false)
+		{
+			t = 0;
+			k = i;
+			p = 10;
+
+			while (k > 0)
+			{
+				p *= 10;
+				l += 10;
+				k /= 10;
+				t++;
+			}
+			if (t > 1)
+			{
+				if (i == 10 || i == 100 || i == 1000 || i == 10000)
+					s = 0;
+
+				l = s;
+				s += 10;
+			}
+			ans = a * p + l + b;
+			if (sqrt(ans) == static_cast<int>(sqrt(ans)))
+			{
+				cout << ans;
+				check = true;
+			}
+			i++;
+		}
+	}
+	/*
+		int ans;
+		ans = (a * 1000) + 620 + b;
+		if (sqrt(ans) == static_cast<int>(sqrt(ans)))
+		{
+			cout << ans;
+		}
+		else
+		{
+			cout << "NO";
+		}
+	*/
 }
 
 /*
