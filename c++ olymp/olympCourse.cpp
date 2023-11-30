@@ -3244,6 +3244,7 @@ cout<<endl<<sum;
 	}
 	*/
 	/*2023-olympiad problem-K*/
+	/*
 	int a, b;
 
 	cin >> a >> b;
@@ -3290,18 +3291,39 @@ cout<<endl<<sum;
 			i++;
 		}
 	}
-	/*
-		int ans;
-		ans = (a * 1000) + 620 + b;
-		if (sqrt(ans) == static_cast<int>(sqrt(ans)))
+*/
+	int t, n, i, k, sum;
+	string str;
+	bool p;
+	cin >> t;
+	while (t--)
+	{
+		k = 0;
+		sum = 0;
+		p = false;
+		cin >> n;
+		cin >> str;
+
+		for (i = 0; i < n; i++)
 		{
-			cout << ans;
+			if (str[i] == '.')
+				k++;
+
+			else
+				k = 0;
+
+			if (k == 3)
+			{
+				cout << 2 << endl;
+				p = true;
+				break;
+			}
+			else if (k > 0 && k < 3)
+				sum++;
 		}
-		else
-		{
-			cout << "NO";
-		}
-	*/
+		if (p == false)
+			cout << sum << endl;
+	}
 }
 
 /*
