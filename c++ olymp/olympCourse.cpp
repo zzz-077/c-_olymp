@@ -3292,38 +3292,40 @@ cout<<endl<<sum;
 		}
 	}
 */
-	int t, n, i, k, sum;
-	string str;
-	bool p;
-	cin >> t;
-	while (t--)
-	{
-		k = 0;
-		sum = 0;
-		p = false;
-		cin >> n;
-		cin >> str;
-
-		for (i = 0; i < n; i++)
+	/*
+		int t, n, i, k, sum;
+		string str;
+		bool p;
+		cin >> t;
+		while (t--)
 		{
-			if (str[i] == '.')
-				k++;
+			k = 0;
+			sum = 0;
+			p = false;
+			cin >> n;
+			cin >> str;
 
-			else
-				k = 0;
-
-			if (k == 3)
+			for (i = 0; i < n; i++)
 			{
-				cout << 2 << endl;
-				p = true;
-				break;
+				if (str[i] == '.')
+					k++;
+
+				else
+					k = 0;
+
+				if (k == 3)
+				{
+					cout << 2 << endl;
+					p = true;
+					break;
+				}
+				else if (k > 0 && k < 3)
+					sum++;
 			}
-			else if (k > 0 && k < 3)
-				sum++;
+			if (p == false)
+				cout << sum << endl;
 		}
-		if (p == false)
-			cout << sum << endl;
-	}
+	*/
 }
 
 /*
