@@ -3292,6 +3292,7 @@ cout<<endl<<sum;
 		}
 	}
 */
+	// Codeforces Round 911 (Div. 2) A. Cover in Water
 	/*
 		int t, n, i, k, sum;
 		string str;
@@ -3326,6 +3327,27 @@ cout<<endl<<sum;
 				cout << sum << endl;
 		}
 	*/
+	// Codeforces Round 911 (Div. 2) B. Laura and Operations
+	int t, a, b, c;
+	cin >> t;
+	while (t--)
+	{
+		cin >> a >> b >> c;
+		if (a == b && b == c && a == c)
+			cout << "1 1 1" << endl;
+		else if (a > b && a > c)
+			cout << "1 0 0" << endl;
+		else if ((a == b && a > c))
+			cout << "0 0 1" << endl;
+		else if ((a == c && a > b))
+			cout << "0 1 0" << endl;
+		else if (b > a && b > c)
+			cout << "0 1 0" << endl;
+		else if (b == c && b > a)
+			cout << "1 0 0" << endl;
+		else if (c > a && c > b)
+			cout << "0 0 1" << endl;
+	}
 }
 
 /*
